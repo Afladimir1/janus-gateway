@@ -134,17 +134,17 @@ file-ondemand-sample: {
 # example of how to create a simple H.264 mountpoint: you can feed it via
 # an x264enc+rtph264pay pipeline in gstreamer, an ffmpeg script or other.
 #
-#h264-sample: {
-	#type = "rtp"
-	#id = 10
-	#description = "H.264 live stream coming from gstreamer"
-	#audio = false
-	#video = true
-	#videoport = 8004
-	#videopt = 126
-	#videortpmap = "H264/90000"
-	#videofmtp = "profile-level-id=42e01f;packetization-mode=1"
-#}
+h264-sample: {
+	type = "rtp"
+	id = 10
+	description = "H.264 live stream coming from gstreamer"
+	audio = false
+	video = true
+	videoport = 8004
+	videopt = 126
+	videortpmap = "H264/90000"
+	videofmtp = "profile-level-id=42e01f;packetization-mode=1"
+}
 
 #
 # The Streaming plugin also supports the broadcasting of datachannel
@@ -155,36 +155,36 @@ file-ondemand-sample: {
 # Notice that the 'rtp' type just indicates this is a live mountpoint:
 # datachannel messages will be sent as usual, and not use RTP at all.
 #
-#data-example: {
-	#type = "rtp"
-	#id = 15
-	#description = "Datachannel stream from an UDP source"
-	#audio = false
-	#video = false
-	#data = true
-	#dataport = 5008
-	#datatype = "text"
-#}
+data-example: {
+	type = "rtp"
+	id = 15
+	description = "Datachannel stream from an UDP source"
+	audio = false
+	video = false
+	data = true
+	dataport = 5008
+	datatype = "text"
+}
 
 #
 # This is a sample configuration for Opus/VP8 multicast streams. You
 # need an external script to feed data on those ports, of course.
 #
-#gstreamer-multicast: {
-	#type = "rtp"
-	#id = 20
-	#description = "Opus/VP8 live multicast stream sample"
-	#audio = true
-	#video = true
-	#audioport = 5002
-	#audiomcast = "232.3.4.5"
-	#audiopt = 111
-	#audiortpmap = "opus/48000/2"
-	#videoport = 5004
-	#videomcast = "232.3.4.5"
-	#videopt = 100
-	#videortpmap = "VP8/90000"
-#}
+gstreamer-multicast: {
+	type = "rtp"
+	id = 20
+	description = "Opus/VP8 live multicast stream sample"
+	audio = true
+	video = true
+	audioport = 5002
+	audiomcast = "232.3.4.5"
+	audiopt = 111
+	audiortpmap = "opus/48000/2"
+	videoport = 5004
+	videomcast = "232.3.4.5"
+	videopt = 100
+	videortpmap = "VP8/90000"
+}
 
 #
 # This is a sample configuration for an RTSP stream: you can specify
@@ -195,13 +195,13 @@ file-ondemand-sample: {
 # in a format the browser can digest (e.g., VP8 or H.264 baseline for video)
 # Again, you can override payload type, rtpmap and/or fmtp, if needed
 #
-#rtsp-test: {
-	#type = "rtsp"
-	#id = 99
-	#description = "RTSP Test"
-	#audio = false
-	#video = true
-	#url = "rtsp://127.0.0.1:8554/unicast"
-	#rtsp_user = "username"
-	#rtsp_pwd = "password"
-#}
+rtsp-test: {
+	type = "rtsp"
+	id = 99
+	description = "RTSP Test"
+	audio = false
+	video = true
+	url = "rtsp://127.0.0.1:8554/unicast"
+	rtsp_user = "username"
+	rtsp_pwd = "password"
+}
